@@ -38,7 +38,7 @@ const PrimaryButton = (props: primaryButtonProps) => {
         hover: {
             transition: {
                 staggerChildren: 0.1,
-                delayChildren: 0.3
+                delayChildren: 0.1
             }
         }
     };
@@ -46,15 +46,15 @@ const PrimaryButton = (props: primaryButtonProps) => {
     const characterVariants: Variants = {
         initial: { y: '0%', opacity: 1 },
         hover: {
-            y: ['0%', '-100%', '100%', '0%'],
+            y: ['0%', '-100%', '-100%', '0%'],
             opacity: [1, 0, 0, 1],
-            transition: { duration: 0.6, times: [0, 0.3, 0.3, 0.6] }
+            transition: { duration: 1.0, times: [0, 0.3, 0.3, 0.7] }
         }
     };
 
     const arrowVariants: Variants = {
         initial: { rotate: -30 },
-        hover: { rotate: 0, transition: { duration: 0.5 } }
+        hover: { rotate: 0, transition: { duration: 0.7 } }
     };
     const spanStyle = {
         display: 'inline-block',
@@ -87,11 +87,11 @@ const PrimaryButton = (props: primaryButtonProps) => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        fontFamily: "Arial, sans-serif"
+                        fontFamily: "SFProDisplay, sans-serif"
                     }}
                 >
                     {characters.map((char, index) => (
-                        <motion.span key={index} variants={characterVariants}  style={spanStyle}>
+                        <motion.span key={index} variants={characterVariants} style={spanStyle}>
                             {char}
                         </motion.span>
                     ))}
