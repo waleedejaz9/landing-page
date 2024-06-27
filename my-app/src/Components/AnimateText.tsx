@@ -35,7 +35,7 @@ const TextAnimationComponent = () => {
             key={`top-${index}`}
             custom={index}
             variants={characterVariants}
-            style={{ display: 'inline', minWidth: "0.6em"}}  // Using inline-flex for each character
+            style={{ display: 'inline', minWidth: "0.5em"}}  // Using inline-flex for each character
           >
             {char}
           </motion.span>
@@ -52,7 +52,7 @@ const TextAnimationComponent = () => {
             key={`bottom-${index}`}
             custom={index + topCharacters.length}
             variants={characterVariants}
-            style={{ display: 'inline-block', minWidth: '0.35em'}}
+            style={{ display: 'inline-block', minWidth: '0.34em'}}
             className='-mt-8'  // Using inline-flex for each character
           >
             {char}

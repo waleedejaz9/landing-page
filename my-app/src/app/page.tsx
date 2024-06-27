@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import PrimaryButton from "@/Components/Button";
-import PrimaryButtonSvg from "../assets/primaryButtonSvg.svg";
+// import PrimaryButtonSvg from "../assets/primaryButtonSvg.svg";
 import footerLogo from "../../public/GIFS/logoWhite.gif";
-import footerLogoStamp from "../assets/footerLogoStamp.png";
+// import footerLogoStamp from "../assets/footerLogoStamp.png";
 import footerStampArrow from "../assets/footerStampArrow.svg"
 import { motion } from 'framer-motion';
 import AnimateText from '@/Components/AnimateText'
+import TeamInformation from "@/Components/TeamInformation";
 
 export default function Home() {
   // Define the radius for the text path and the inner circle
@@ -21,7 +22,9 @@ export default function Home() {
   const repeatedText = text.repeat(3); // Adjust repetition based on your text length and desired density
 
   return (
-    <footer className="w-100">
+    <div>
+      <TeamInformation />
+      <footer className="w-100">
       <div className="flex justify-between  m-auto items-center" style={{ backgroundColor: "#DF1780", height: "408.52px" }}>
         <div style={{ marginLeft: "68px" }}>
           <AnimateText />
@@ -88,5 +91,7 @@ export default function Home() {
         </div>
       </div>
     </footer>
+    </div>
+    
   );
 }

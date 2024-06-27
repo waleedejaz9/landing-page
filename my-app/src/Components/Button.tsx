@@ -1,5 +1,3 @@
-import Image from "next/image";
-import primaryButtonSvg from '../assets/primaryButtonSvg.svg'
 import { motion, Variants } from 'framer-motion';
 import { useState } from "react";
 
