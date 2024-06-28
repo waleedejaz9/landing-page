@@ -4,6 +4,7 @@ import { useState } from "react";
 interface primaryButtonProps {
     text: string;
     customClassName?: Object;
+    outerClassName? : any;
 }
 const PrimaryButton = (props: primaryButtonProps) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -59,7 +60,8 @@ const PrimaryButton = (props: primaryButtonProps) => {
         minWidth: '0.6em', // Adjust this value as needed for the desired space width
     };
     return (
-        <div>
+        // className='bg-[#DF1780] p-5' style={{width:"15%"}}
+        <div className={props.outerClassName} >
             <motion.button
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}

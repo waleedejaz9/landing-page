@@ -90,8 +90,8 @@ const SecondaryButton = (props: PrimaryButtonProps) => {
                     style={{ marginLeft: '10px', display: 'flex', alignItems: 'center' }}
                 >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L22 12L12 22" style={{stroke: "#ffffff !important"}} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M2 12H22"  style={{stroke: "#ffffff !important"}} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M12 2L22 12L12 22" style={{ stroke: "#ffffff !important" }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M2 12H22" style={{ stroke: "#ffffff !important" }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </motion.div>
             </motion.button>

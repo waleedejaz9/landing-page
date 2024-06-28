@@ -59,7 +59,8 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   margin: 20px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.5s ease;
+
 }
 
 .card:hover {
@@ -75,10 +76,4 @@ body {
 .card-content {
   padding: 16px;
   background: white;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }

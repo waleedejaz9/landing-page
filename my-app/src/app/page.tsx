@@ -14,10 +14,18 @@ import Card from '../Components/SocialPostsCardView';
 import rectangle from '../assets/bgImage.png'
 import camera from '../assets/camera-black.svg'
 import goVegan from "../assets/goVegan.png"
+import twitterLogo from "../assets/twitterLogo.png"
 
 
-const cards = [
-  { id: 1, title: '', rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+
+const cardItems = [
+  { id: 1, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+  { id: 2, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+  { id: 3, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+  { id: 4, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+  { id: 5, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+  { id: 6, title: '', hashtags: ['#vegan', '#healthy'], socialAppIcon: twitterLogo.src, rectangle: rectangle.src, goVegan: goVegan.src, camera: camera.src, date: '15 Oct 2019', description: 'The Best Vegan Chocolate Cake- A quick and easy recipe! It’s super moist, rich and full of chocolate. ' },
+
   // Add more cards as per your requirement
 ];
 export default function Home() {
@@ -34,8 +42,34 @@ export default function Home() {
 
   return (
     <div>
-      {/* <TeamInformation /> */}
-      <section className="flex pb-10">
+      <section className="bg-[#D9D9D9]">
+        <h1 className="text-center text-[90px]" style={{ fontWeight: '860', fontFamily: "SFProDisplay, sans-serif" }}>ALL THAT WE DID!!!</h1>
+        <h2 className="text-center -mt-7 mb-10" style={{ fontWeight: '700', lineHeight: '32.52px', fontFamily: "SFProDisplay, sans-serif", fontSize: "27.1px" }}>THAT YOU MUST HAVE SEEN</h2>
+
+
+        <TeamInformation />
+        <div className="mt-20 flex justify-center">
+        <SecondaryButton
+        outerClassName= "bg-[#DF1780] p-5 w-[15%]"
+            customClassName={{
+            
+              backgroundColor: "#DF1780",
+              border: "none",
+              color: "white",
+              cursor: "pointer",
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: '15.5px', lineHeight: "25.6px", fontWeight: '590', fontFamily: "SFProDisplay, sans-serif",
+              width: "15%",
+            
+              justifyContent: "space-between"
+            }}
+            text="TAKE ME BACK"
+          />
+        </div>
+      
+      </section>
+      <section className="flex pb-10 bg-[#D9D9D9]">
 
         <div className="w-4/12">
           <h3
@@ -72,13 +106,13 @@ export default function Home() {
             text="TAKE ME BACK"
           />
         </div>
-        <div className="w-8/12 mt-16">
-          <div className="grid grid-cols-3">
-          <motion.div layout className="container">
-            {cards.map(card => (
-                <Card key={card.id} card={card} />
-            ))}
-        </motion.div>
+        <div className="w-7/12 mt-16">
+          <div className="">
+            <motion.div layout className="grid grid-cols-3">
+              {cardItems.map(card => (
+                <Card data={card} />
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
