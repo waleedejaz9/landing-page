@@ -3,12 +3,12 @@ import { useState } from "react";
 
 interface primaryButtonProps {
     text: string;
-    customClassName?: string;
+    customClassName?: Object;
 }
 const PrimaryButton = (props: primaryButtonProps) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    const text = "LET'S GO";
+    const text = props.text;
     const characters = [];
 
     let currentWord = '';
@@ -63,19 +63,7 @@ const PrimaryButton = (props: primaryButtonProps) => {
             <motion.button
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                style={{
-                    marginTop: "20px",
-                    backgroundColor: "white",
-                    border: "none",
-                    color: "#DF1780",
-                    padding: "10px 20px",
-                    cursor: "pointer",
-                    overflow: "hidden",
-                    position: "relative",
-                    display: 'flex',
-                    alignItems: 'center',
-                    fontSize: '15.25px', lineHeight: "25.6px", fontWeight: '590', fontFamily: "SFProDisplay, sans-serif"
-                }}
+                style={props.customClassName}
             >
                 <motion.div
                     variants={containerVariants}
@@ -101,7 +89,7 @@ const PrimaryButton = (props: primaryButtonProps) => {
                     style={{ marginLeft: '10px', display: 'flex', alignItems: 'center' }}
                 >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L22 12L12 22" stroke="#DF1780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M12 2L22 12L12 22" stroke={"#DF1780"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M2 12H22" stroke="#DF1780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </motion.div>

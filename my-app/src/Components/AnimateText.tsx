@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion';
-
+interface TextProps {
+  topText?: string;
+  bottomText?: string;
+  topTextStyle?: Object;
+  bottomTextStyle?: Object;
+}
 // Define character animation variants for the motion components
 const characterVariants = {
   initial: { y: 30, opacity: 0 },
@@ -14,20 +19,20 @@ const characterVariants = {
   })
 };
 
-const TextAnimationComponent = () => {
-  const topText = "LOUDER";
-  const bottomText = "THE BETTER";
+const TextAnimationComponent = (props: TextProps) => {
+  const topText = props.topText;
+  const bottomText = props.bottomText;
 
   // Convert strings into arrays of characters
-  const topCharacters = Array.from(topText);
-  const bottomCharacters = Array.from(bottomText);
+  const topCharacters = Array.from(topText ? topText : "");
+  const bottomCharacters = Array.from(bottomText  ? bottomText : "");
 
   return (
     <div className='flex flex-col items-center' style={{ fontFamily: 'SFProDisplay, sans-serif', width: '100%', maxWidth: '300px'}}>
       <motion.div
         initial="initial"
         animate="animate"
-        style={{ display: 'flex', justifyContent: 'start', fontWeight: '860', fontSize: '87.51px', color: "#ffffff"}}
+        style={props.topTextStyle}
         className='ml-20'
       >
         {topCharacters.map((char, index) => (
@@ -44,7 +49,7 @@ const TextAnimationComponent = () => {
       <motion.div
         initial="initial"
         animate="animate"
-        style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: '58px', letterSpacing: '3px', color: "#ffffff" }}
+        style={props.bottomTextStyle}
          className='ml-20'
       >
         {bottomCharacters.map((char, index) => (
